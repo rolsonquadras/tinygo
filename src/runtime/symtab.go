@@ -7,6 +7,10 @@ type Frames struct {
 type Frame struct {
 	Function string
 
+	// Func is the Func value of this call frame. This may be nil
+	// for non-Go code or fully inlined functions.
+	Func *Func
+
 	File string
 	Line int
 	PC   uintptr
